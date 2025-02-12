@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ActionPne" prefHeight="756.0" prefWidth="1261.0" style="-fx-background-color: #d2dae2;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse71.royalbid.Controller.ActionDetailsController">
+   <children>
+      <Label layoutX="556.0" layoutY="14.0" prefHeight="59.0" prefWidth="250.0" text="Auction management">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="Matter" layoutX="27.0" layoutY="122.0" prefHeight="25.0" prefWidth="100.0" text="Legal Matters">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="Locatio" layoutX="27.0" layoutY="227.0" prefHeight="17.0" prefWidth="92.0" text="Location">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="269.0" prefHeight="17.0" prefWidth="92.0" text="Time Detals">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Matterstxt" layoutX="137.0" layoutY="122.0" prefHeight="25.0" prefWidth="453.0" />
+      <TextField fx:id="locationtxt" layoutX="137.0" layoutY="227.0" prefHeight="25.0" prefWidth="453.0" />
+      <TextField fx:id="timetxt" layoutX="137.0" layoutY="267.0" prefHeight="25.0" prefWidth="453.0" />
+      <TableView fx:id="AuctionTable" layoutX="11.0" layoutY="334.0" onMouseClicked="#ClickTable" prefHeight="393.0" prefWidth="1236.0">
+        <columns>
+          <TableColumn fx:id="ActionalId" minWidth="0.0" prefWidth="252.0" text="Actional Id" />
+          <TableColumn fx:id="LegalMatters" prefWidth="218.0" text="Legal Matters" />
+            <TableColumn fx:id="Location" prefWidth="275.0" text="Location" />
+            <TableColumn fx:id="TimeDetals" prefWidth="251.0" text="Time Detals" />
+            <TableColumn fx:id="AssetsIdColom" prefWidth="314.0" text="Assets ID" />
+        </columns>
+      </TableView>
+      <Button fx:id="Save" layoutX="879.0" layoutY="110.0" mnemonicParsing="false" onAction="#SaveAction" prefHeight="25.0" prefWidth="196.0" text="Save" />
+      <Button fx:id="Delete" layoutX="879.0" layoutY="189.0" mnemonicParsing="false" onAction="#DeletAction" prefHeight="25.0" prefWidth="196.0" text="Delet" />
+      <Button fx:id="Update" layoutX="879.0" layoutY="148.0" mnemonicParsing="false" onAction="#UpdateAction" prefHeight="25.0" prefWidth="196.0" text="Update" />
+      <Label fx:id="id" layoutX="27.0" layoutY="87.0" prefHeight="25.0" prefWidth="110.0" text="Actional Id">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="idlable" layoutX="137.0" layoutY="87.0" prefHeight="25.0" prefWidth="110.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="Locatio1" layoutX="27.0" layoutY="177.0" prefHeight="17.0" prefWidth="92.0" text="AssetsID">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="AssetsIDtxt" layoutX="137.0" layoutY="177.0" prefHeight="25.0" prefWidth="453.0" />
+   </children>
+</AnchorPane>
