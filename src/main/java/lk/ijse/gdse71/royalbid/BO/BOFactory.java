@@ -1,10 +1,7 @@
 package lk.ijse.gdse71.royalbid.BO;
 
 import lk.ijse.gdse71.royalbid.BO.Custom.CustomerBO;
-import lk.ijse.gdse71.royalbid.BO.Custom.impl.AssetsBOImpl;
-import lk.ijse.gdse71.royalbid.BO.Custom.impl.BiddersBOImpl;
-import lk.ijse.gdse71.royalbid.BO.Custom.impl.CustomerBOImpl;
-import lk.ijse.gdse71.royalbid.BO.Custom.impl.EvaluatoreBOImpl;
+import lk.ijse.gdse71.royalbid.BO.Custom.impl.*;
 import lk.ijse.gdse71.royalbid.Entity.Evaluator;
 
 public class BOFactory {
@@ -23,7 +20,7 @@ public class BOFactory {
 
     // Enum for Business Object types
     public enum BOType {
-        Customer,Assets,Evaluatore
+        Customer,Assets,Evaluatore,Catogery,LegalDou,Finance
     }
 
     // Factory method to return correct BO instance
@@ -35,6 +32,12 @@ public class BOFactory {
                     return new AssetsBOImpl();
                     case Evaluatore:
                         return new EvaluatoreBOImpl();
+                        case Catogery:
+                            return new CatogeryBOImpl();
+                            case LegalDou:
+                                return new LegalDouBOImpl();
+                                case Finance:
+                                    return new FinancePageBOImpl();
 
             default:
                 throw new IllegalArgumentException("Invalid BOType: " + boType);
