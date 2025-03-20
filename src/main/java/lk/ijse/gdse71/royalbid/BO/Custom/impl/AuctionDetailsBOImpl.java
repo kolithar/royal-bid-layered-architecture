@@ -14,7 +14,7 @@ import lk.ijse.gdse71.royalbid.Entity.Evaluator;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AuctionDetailsBOImpl implements AuctionDetailsBO {
+public class  AuctionDetailsBOImpl implements AuctionDetailsBO {
 
     AuctionDetailsDAO auctionDetailsDAO =
             (AuctionDetailsDAO) DAOFactory.getInstance().

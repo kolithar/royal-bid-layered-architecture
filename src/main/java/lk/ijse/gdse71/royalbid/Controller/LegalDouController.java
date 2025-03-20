@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.gdse71.royalbid.BO.BOFactory;
+import lk.ijse.gdse71.royalbid.BO.Custom.AssetsBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.LegalDouBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.LegalDouBOImpl;
 import lk.ijse.gdse71.royalbid.DTO.CustomerDto;
@@ -68,10 +70,11 @@ public class LegalDouController implements Initializable {
     @FXML
     private Button UpdateButton;
 
-  
 
-    LegalDouBO legalDouBO = new LegalDouBOImpl();
 
+    LegalDouBO legalDouBO =
+            (LegalDouBO) BOFactory.getInstance().
+                    getBO(BOFactory.BOType.LegalDou);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Configure table columns

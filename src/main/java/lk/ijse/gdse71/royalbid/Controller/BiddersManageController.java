@@ -25,7 +25,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class BiddersManageController implements Initializable {
+public class  BiddersManageController implements Initializable {
 
     @FXML
     private TextField BidderAdders;

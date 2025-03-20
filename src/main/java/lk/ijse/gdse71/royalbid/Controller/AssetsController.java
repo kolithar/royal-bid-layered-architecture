@@ -16,6 +16,8 @@ import lk.ijse.gdse71.royalbid.BO.Custom.CustomerBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.AssetsBOImpl;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.CatogeryBOImpl;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.CustomerBOImpl;
+import lk.ijse.gdse71.royalbid.DAO.Custom.FinanceDAO;
+import lk.ijse.gdse71.royalbid.DAO.DAOFactory;
 import lk.ijse.gdse71.royalbid.DTO.AssetsDto;
 import lk.ijse.gdse71.royalbid.DTO.CustomerDto;
 
@@ -89,7 +91,12 @@ public class AssetsController implements Initializable {
 
     private final ObservableList<AssetsDto> assetsDtos = FXCollections.observableArrayList();
 
-    AssetsBO assetsBO = new AssetsBOImpl();
+    AssetsBO assetsBO =
+            (AssetsBO) BOFactory.getInstance().
+                    getBO(BOFactory.BOType.Assets);
+
+
+
     CatogeryBO catogeryBO = new CatogeryBOImpl();
     CustomerBO customerBO = new CustomerBOImpl();
 
@@ -315,10 +322,10 @@ try {
 
     private void lodecustomerid() throws SQLException, ClassNotFoundException {
 
-        ArrayList<String> CatogeryIds = customerBO .getAllCustomerIds();
+        ArrayList<String> customerIds = customerBO .getAllCustomerIds();
         ObservableList<String> observableList = FXCollections.observableArrayList();
-        observableList.addAll(CatogeryIds);
-        cmbCatogeryID.setItems(observableList);
+        observableList.addAll(customerIds);
+        cmbCustomerID.setItems(observableList);
 
     }
 

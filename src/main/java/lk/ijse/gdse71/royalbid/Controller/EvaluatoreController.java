@@ -9,6 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.gdse71.royalbid.BO.BOFactory;
+import lk.ijse.gdse71.royalbid.BO.Custom.AssetsBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.EvaluatoreBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.EvaluatoreBOImpl;
 import lk.ijse.gdse71.royalbid.DTO.EvaluatorDto;
@@ -73,7 +75,9 @@ public class EvaluatoreController implements Initializable {
     @FXML
     private Button UpdayeButton;
 
-EvaluatoreBO evaluatoreBO = new EvaluatoreBOImpl();
+    EvaluatoreBO evaluatoreBO =
+            (EvaluatoreBO) BOFactory.getInstance().
+                    getBO(BOFactory.BOType.Evaluatore);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

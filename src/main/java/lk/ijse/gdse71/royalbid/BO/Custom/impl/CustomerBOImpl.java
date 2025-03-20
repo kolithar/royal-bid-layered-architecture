@@ -64,9 +64,9 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public boolean deleteCustomer(String customerId) throws Exception { //  Implement deleteCustomer
+    public void  deleteCustomer(String customerId) throws Exception { //  Implement deleteCustomer
          customerDAO.delete(customerId);
-        return false;
+
     }
 
 

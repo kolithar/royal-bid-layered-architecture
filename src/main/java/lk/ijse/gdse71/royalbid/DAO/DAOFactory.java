@@ -17,7 +17,7 @@ public class DAOFactory {
     }
 
     public enum DAOType {
-        Customer,Assets,Evaluatore,Bidder,Finance,LegalDou,Catogery,ActionDetails,AssetsAndEvaluatore,BiddersAndAssets
+        Customer,Assets,Evaluatore,Bidder,Finance,LegalDou,Catogery,ActionDetails,AssetsAndEvaluatore,BiddersAndAssets,AssetsList
 
     }
 

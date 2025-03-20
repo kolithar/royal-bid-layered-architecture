@@ -9,6 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.gdse71.royalbid.BO.BOFactory;
+import lk.ijse.gdse71.royalbid.BO.Custom.AssetsBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.CatogeryBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.CatogeryBOImpl;
 import lk.ijse.gdse71.royalbid.DTO.CatogeryDto;
@@ -58,7 +60,9 @@ public class CatogeryController implements Initializable {
 
 
 
-    CatogeryBO catogeryBO = new CatogeryBOImpl();
+    CatogeryBO catogeryBO =
+            (CatogeryBO) BOFactory.getInstance().
+                    getBO(BOFactory.BOType.Catogery);
 
 
     @Override

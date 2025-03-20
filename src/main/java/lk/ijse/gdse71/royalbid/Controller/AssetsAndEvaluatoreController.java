@@ -38,6 +38,7 @@ public class AssetsAndEvaluatoreController implements Initializable {
     @FXML
     private Button BackButton;
 
+
     @FXML
     private TableView<AssetAndEvaluatorDto> EvaluatoAndAssetsTable;
 
@@ -68,6 +69,7 @@ public class AssetsAndEvaluatoreController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         EvaluatoreIDCol.setCellValueFactory(new PropertyValueFactory<>("EvaluatorId"));
         AssetsIDCol.setCellValueFactory(new PropertyValueFactory<>("AssetsId"));
+
 
 
         try {

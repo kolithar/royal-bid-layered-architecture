@@ -30,7 +30,7 @@ public class BiddersAndAssetsBOImpl implements BiddersAndAssetsBO {
     }
 
     @Override
-    public ArrayList<BiddersAndAssetsDto> getAllab() throws SQLException, ClassNotFoundException {
+    public ArrayList<BiddersAndAssetsDto> getAllab () throws SQLException, ClassNotFoundException {
         ArrayList<BiddersAndAssets> biddersAndAssets = biddersAndAssetsDAO.getAll();// Fetch evaluarore from the DAO
         ArrayList<BiddersAndAssetsDto> biddersAndAssetsDtos = new ArrayList<>();
 

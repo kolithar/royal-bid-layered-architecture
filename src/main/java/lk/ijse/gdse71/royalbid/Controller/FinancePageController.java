@@ -10,11 +10,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.gdse71.royalbid.BO.BOFactory;
+import lk.ijse.gdse71.royalbid.BO.Custom.CatogeryBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.FinanceBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.FinancePageBOImpl;
 import lk.ijse.gdse71.royalbid.DTO.CustomerDto;
 import lk.ijse.gdse71.royalbid.DTO.TransactionDto;
-import lk.ijse.gdse71.royalbid.Model.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -79,7 +80,9 @@ public class  FinancePageController implements Initializable {
     void DeleteActio(ActionEvent event) {
 
     }
-FinanceBO financeBO = new FinancePageBOImpl();
+    FinanceBO financeBO =
+            (FinanceBO) BOFactory.getInstance().
+                    getBO(BOFactory.BOType.Finance);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

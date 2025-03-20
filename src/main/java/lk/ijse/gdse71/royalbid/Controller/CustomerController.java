@@ -13,7 +13,6 @@ import lk.ijse.gdse71.royalbid.BO.BOFactory;
 import lk.ijse.gdse71.royalbid.BO.Custom.CustomerBO;
 import lk.ijse.gdse71.royalbid.BO.Custom.impl.CustomerBOImpl;
 import lk.ijse.gdse71.royalbid.DTO.CustomerDto;
-import lk.ijse.gdse71.royalbid.Model.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -125,7 +124,7 @@ CustomerBO customerBO = new CustomerBOImpl();
                         customerDTO.getCustomerName(),
                         customerDTO.getCustomersAssetName(),
                         customerDTO.getCustomerAddress(),
-                        customerDTO.getCustomerNumber()
+                        customerDTO.getCustomerNumber ()
                 ));
             }
             CustTable.setItems(customerTMS);
@@ -230,19 +229,18 @@ CustomerBO customerBO = new CustomerBOImpl();
             Optional<ButtonType> optionalButtonType = alert.showAndWait();
 
             if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
-                // ✅ Get CustomerBO instance from BOFactory
+
                 CustomerBO customerBO = (CustomerBO) BOFactory.getInstance().getBO(BOFactory.BOType.Customer);
 
-                // ✅ Call deleteCustomer method
-                boolean isDeleted = customerBO.deleteCustomer(customerId);
 
-                if (isDeleted) {
-                    refreshPage();
+                customerBO.deleteCustomer(customerId);
+                CustTable.getItems().remove(CustTable.getSelectionModel().getSelectedItem());
+                CustTable.getSelectionModel().clearSelection();
                     new Alert(Alert.AlertType.INFORMATION, "Customer deleted successfully!").show();
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Failed to delete customer!").show();
                 }
-            }
+
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "An error occurred: " + e.getMessage()).show();
             e.printStackTrace();
