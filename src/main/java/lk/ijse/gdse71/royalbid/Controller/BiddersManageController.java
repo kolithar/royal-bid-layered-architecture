@@ -177,7 +177,7 @@ public class  BiddersManageController implements Initializable {
 
         return valid;
     }
-
+// CLONE
 
     @FXML
     void TableCliced(MouseEvent event) {
